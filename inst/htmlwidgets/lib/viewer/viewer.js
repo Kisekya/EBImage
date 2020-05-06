@@ -378,7 +378,7 @@ function Viewer(parent){
 
 	    image.style.cursor = cursor;
 	    previousMousePosition = getMouseXY(event);
-	    Shiny.setInputValue(session$ns("pixelPosition"), viewer.getPixelPosition(event));
+	    Shiny.setInputValue("pixelPosition", viewer.getPixelPosition(event));
 	    image.onmousemove = viewer.dragImage;
 	}
 
