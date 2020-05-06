@@ -548,9 +548,9 @@ function Viewer(parent){
 	viewer.setFrame();
 	image.onload = viewer.resetCanvas();
 
-	Shiny.setInputValue("imgWidth", originalWidth);
-	Shiny.setInputValue("imgHeight", originalHeight);
-	viewer.updateStatusField("Image", originalWidth+'x'+originalHeight);
+	Shiny.setInputValue(ns("imgWidth"), originalWidth);
+	Shiny.setInputValue(ns("imgHeight"), originalHeight);
+	viewer.updateStatusField(ns("Image"), originalWidth+'x'+originalHeight);
       
   }
 
