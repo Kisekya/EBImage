@@ -203,7 +203,7 @@ function Viewer(parent){
 
 		currentFrame = frame;
 		viewer.updateStatusField("Frame", currentFrame+'/'+numberOfFrames);
-	        Shiny.setInputValue(session$ns("currentFrame"), currentFrame);
+	        Shiny.setInputValue("currentFrame", currentFrame);
 	    
 		// button locking
 		buttons['first'].disable(currentFrame==1);
@@ -548,8 +548,8 @@ function Viewer(parent){
 	viewer.setFrame();
 	image.onload = viewer.resetCanvas();
 
-	Shiny.setInputValue(session$ns("imgWidth"), originalWidth);
-	Shiny.setInputValue(session$ns("imgHeight"), originalHeight);
+	Shiny.setInputValue("imgWidth", originalWidth);
+	Shiny.setInputValue("imgHeight", originalHeight);
 	viewer.updateStatusField("Image", originalWidth+'x'+originalHeight);
       
   }
