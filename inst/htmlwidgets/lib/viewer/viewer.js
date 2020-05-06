@@ -550,7 +550,7 @@ function Viewer(parent){
 
 	Shiny.setInputValue(ns("imgWidth"), originalWidth);
 	Shiny.setInputValue(ns("imgHeight"), originalHeight);
-	viewer.updateStatusField(ns("Image"), originalWidth+'x'+originalHeight);
+	viewer.updateStatusField("Image", originalWidth+'x'+originalHeight);
       
   }
 
