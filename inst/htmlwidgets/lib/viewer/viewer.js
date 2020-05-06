@@ -378,7 +378,7 @@ function Viewer(parent){
 
 	    image.style.cursor = cursor;
 	    previousMousePosition = getMouseXY(event);
-	    Shiny.setInputValue(ns("pixelPosition"), viewer.getPixelPosition(event));
+	    Shiny.setInputValue("pixelPosition", viewer.getPixelPosition(event));
 	    image.onmousemove = viewer.dragImage;
 	}
 
@@ -548,8 +548,8 @@ function Viewer(parent){
 	viewer.setFrame();
 	image.onload = viewer.resetCanvas();
 
-	Shiny.setInputValue(ns("imgWidth"), originalWidth);
-	Shiny.setInputValue(ns("imgHeight"), originalHeight);
+	Shiny.setInputValue("imgWidth", originalWidth);
+	Shiny.setInputValue("imgHeight", originalHeight);
 	viewer.updateStatusField("Image", originalWidth+'x'+originalHeight);
       
   }
