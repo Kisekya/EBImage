@@ -377,8 +377,10 @@ function Viewer(parent){
 			cursor = 'n-resize';
 
 	    image.style.cursor = cursor;
-	    previousMousePosition = getMouseXY(event);
-	    Shiny.setInputValue("pixelPosition", viewer.getPixelPosition(event));
+		previousMousePosition = getMouseXY(event);
+		Shiny.addCustomMessageHandler('whoareyou', function(arg) {
+			Shiny.setInputValue(arg.id, viewer.getPixelPosition(event));
+		  })
 	    image.onmousemove = viewer.dragImage;
 	}
 
