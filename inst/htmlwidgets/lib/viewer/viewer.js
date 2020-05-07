@@ -378,10 +378,15 @@ function Viewer(parent){
 
 	    image.style.cursor = cursor;
 		previousMousePosition = getMouseXY(event);
-		Shiny.setInputValue("pixelPosition", viewer.getPixelPosition(event));
+		Shiny.addCustomMessageHandler("getwidth", function() {
+			w = Math.random();
+			Shiny.setInputValue("notfromr",w );
+		  });
+		//Shiny.setInputValue("pixelPosition", viewer.getPixelPosition(event));
 		Shiny.setInputValue("notfromr", Math.random())
 	    image.onmousemove = viewer.dragImage;
 	}
+
 
 	this.releaseImage = function(event) {
 		event = preProcessEvent(event);
