@@ -379,9 +379,11 @@ function Viewer(parent){
 	    image.style.cursor = cursor;
 		previousMousePosition = getMouseXY(event);
 		//Shiny.setInputValue("pixelPosition", viewer.getPixelPosition(event));
+		$( document ).ready(function() {
 		Shiny.addCustomMessageHandler('whoareyou', function(arg) {
 			Shiny.setInputValue(arg.id, Math.random());
 		  })
+		});
 		//Shiny.setInputValue("notfromr", Math.random())
 	    image.onmousemove = viewer.dragImage;
 	}
