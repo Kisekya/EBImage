@@ -203,7 +203,7 @@ function Viewer(parent){
 
 		currentFrame = frame;
 		viewer.updateStatusField("Frame", currentFrame+'/'+numberOfFrames);
-	        Shiny.setInputValue(currentFrame, currentFrame);
+	        Shiny.setInputValue(NS("image", id="currentFrame"), currentFrame);
 	    
 		// button locking
 		buttons['first'].disable(currentFrame==1);
@@ -378,8 +378,8 @@ function Viewer(parent){
 
 	    image.style.cursor = cursor;
 		previousMousePosition = getMouseXY(event);
-		Shiny.setInputValue("pixelPosition", viewer.getPixelPosition(event));
-		Shiny.setInputValue(ns("notfromr"),  Math.random());
+		Shiny.setInputValue(NS("image", id= "pixelPosition", viewer.getPixelPosition(event));
+		Shiny.setInputValue(NS("image", id="notfromr"),  Math.random());
 		Shiny.setInputValue("notfromr", Math.random());
 	    image.onmousemove = viewer.dragImage;
 	}
@@ -551,8 +551,8 @@ function Viewer(parent){
 	viewer.setFrame();
 	image.onload = viewer.resetCanvas();
 
-	Shiny.setInputValue(imgWidth, originalWidth);
-	Shiny.setInputValue(imgHeight, originalHeight);
+	Shiny.setInputValue(NS("image", id="imgWidth"), originalWidth);
+	Shiny.setInputValue(NS("image", id="imgHeight"), originalHeight);
 	viewer.updateStatusField("Image", originalWidth+'x'+originalHeight);
       
   }
