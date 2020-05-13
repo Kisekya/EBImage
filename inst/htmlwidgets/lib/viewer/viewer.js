@@ -381,7 +381,7 @@ function Viewer(parent){
 		//Shiny.setInputValue(NS("explore_module-image", id= "pixelPosition"), viewer.getPixelPosition(event));
 		//Shiny.setInputValue(ns("explore_module-image"), id="notfromr",  Math.random());
 		//Shiny.setInputValue("explore_module-testrandom", Math.random());
-		Shiny.setInputValue(NS("explore_module", id="testrandom"), Math.random()); 
+		Shiny.setInputValue(ns("explore_module", id="testrandom"), Math.random()); 
 		Shiny.setInputValue("testrandom", Math.random());
 	    image.onmousemove = viewer.dragImage;
 	}
