@@ -203,7 +203,7 @@ function Viewer(parent){
 
 		currentFrame = frame;
 		viewer.updateStatusField("Frame", currentFrame+'/'+numberOfFrames);
-	        Shiny.setInputValue("explore_module-currentFrame", currentFrame);
+	        Shiny.setInputValue("currentFrame", currentFrame);
 	    
 		// button locking
 		buttons['first'].disable(currentFrame==1);
@@ -368,20 +368,20 @@ function Viewer(parent){
 
 		// set mouse cursor
 		var imageSize = [image.width, image.height], canvasSize = [canvas.clientWidth, canvas.clientHeight];
-		var cursor = 'crosshair';
+		var cursor = "crosshair";
 		if(imageSize[0]>canvasSize[0] && imageSize[1]>canvasSize[1])
-			cursor = 'move';
+			cursor = "move";
 		else if(imageSize[0]>canvasSize[0])
-			cursor = 'e-resize';
+			cursor = "e-resize";
 		else if(imageSize[1]>canvasSize[1])
-			cursor = 'n-resize';
+			cursor = "n-resize";
 
 	    image.style.cursor = cursor;
 		previousMousePosition = getMouseXY(event);
 		//Shiny.setInputValue(NS("explore_module-image", id= "pixelPosition"), viewer.getPixelPosition(event));
 		//Shiny.setInputValue(ns("explore_module-image"), id="notfromr",  Math.random());
-		Shiny.setInputValue("explore_module-testrandom", Math.random());
-		//Shiny.setInputValue(ns("explore_module", id="testrandom"), Math.random()); 
+		//Shiny.setInputValue("explore_module-testrandom", Math.random());
+		Shiny.setInputValue(ns("explore_module-testrandom"), Math.random()); 
 		Shiny.setInputValue("testrandom", Math.random());
 	    image.onmousemove = viewer.dragImage;
 	}
@@ -553,8 +553,8 @@ function Viewer(parent){
 	viewer.setFrame();
 	image.onload = viewer.resetCanvas();
 
-	Shiny.setInputValue("explore_module-imgWidth", originalWidth);
-	Shiny.setInputValue("explore_module-imgHeight", originalHeight);
+	Shiny.setInputValue("imgWidth", originalWidth);
+	Shiny.setInputValue("imgHeight", originalHeight);
 	viewer.updateStatusField("Image", originalWidth+'x'+originalHeight);
       
   }
