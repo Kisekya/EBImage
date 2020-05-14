@@ -368,13 +368,13 @@ function Viewer(parent){
 
 		// set mouse cursor
 		var imageSize = [image.width, image.height], canvasSize = [canvas.clientWidth, canvas.clientHeight];
-		var cursor = 'crosshair';
+		var cursor = "crosshair";
 		if(imageSize[0]>canvasSize[0] && imageSize[1]>canvasSize[1])
-			cursor = 'move';
+			cursor = "move";
 		else if(imageSize[0]>canvasSize[0])
-			cursor = 'e-resize';
+			cursor = "e-resize";
 		else if(imageSize[1]>canvasSize[1])
-			cursor = 'n-resize';
+			cursor = "n-resize";
 
 	    image.style.cursor = cursor;
 		previousMousePosition = getMouseXY(event);
