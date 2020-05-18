@@ -378,11 +378,11 @@ function Viewer(parent){
 
 	    image.style.cursor = cursor;
 		previousMousePosition = getMouseXY(event);
-		//Shiny.setInputValue(NS("explore_module-image", id= "pixelPosition"), viewer.getPixelPosition(event));
-		//Shiny.setInputValue(ns("explore_module-image"), id="notfromr",  Math.random());
+		Shiny.setInputValue("explore_module-image-pixelPosition"), viewer.getPixelPosition(event));
+		//Shiny.setInputValue("explore_module-image-pixelPosition", id="notfromr",  Math.random());
 		//Shiny.setInputValue("explore_module-testrandom", Math.random());
-		Shiny.setInputValue("explore_module-image-testrandom", Math.random()); 
-		Shiny.setInputValue("testrandom", Math.random());
+		//Shiny.setInputValue("explore_module-image-testrandom", Math.random()); 
+		//Shiny.setInputValue("testrandom", Math.random());
 	    image.onmousemove = viewer.dragImage;
 	}
 
